@@ -6,6 +6,7 @@ export interface ProductProps {
   id: number;
   title: string;
   image : string;
+  price: Number;
 }
 const useProducts = ()=>{
     const [products, setProduct] = useState<ProductProps[]>([]);

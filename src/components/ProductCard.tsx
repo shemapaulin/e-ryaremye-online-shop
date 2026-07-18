@@ -13,8 +13,9 @@ const ProductCard = ( {product}:Props) => {
         <Image src={product.image} boxSize="140px"
     objectFit="contain"/>
         <CardBody>
-            <Heading fontSize='xl' noOfLines={2}
+            <Heading fontSize="xs"  noOfLines={2}
   fontWeight="bold">{product.title}</Heading>
+     <Heading fontSize="17px" paddingTop="3px">$ {String(product.price)}</Heading>
         </CardBody>
     </Card>
   )
