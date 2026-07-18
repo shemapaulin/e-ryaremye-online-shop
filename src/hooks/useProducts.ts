@@ -11,12 +11,17 @@ export interface ProductProps {
 const useProducts = ()=>{
     const [products, setProduct] = useState<ProductProps[]>([]);
   const [error, setError] = useState("");
+  const [isLoading,setLoading]=useState(false)
 
   useEffect(() => {
     const controller = new AbortController()
+    setLoading(true)
     apiClients
       .get<ProductProps[]>("/products",{signal:controller.signal})
-      .then((res) => setProduct(res.data))
+      .then((res) => {
+        setProduct(res.data)
+        setLoading(false)
+    })
       .catch((err) => {
         if (err instanceof CanceledError) return
         setError(err.message)});
@@ -25,7 +30,7 @@ const useProducts = ()=>{
       return ()=> controller.abort()
   }, []);
 
-  return {products,error}
+  return {products,error,isLoading}
 }
 
 export default useProducts
