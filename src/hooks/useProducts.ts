@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 import apiClients from "../Services/api-clients";
 import { CanceledError } from "axios";
 
-interface ProductProps {
+export interface ProductProps {
   id: number;
   title: string;
+  image : string;
 }
 const useProducts = ()=>{
     const [products, setProduct] = useState<ProductProps[]>([]);

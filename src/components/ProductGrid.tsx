@@ -1,17 +1,24 @@
+import { Center, SimpleGrid } from "@chakra-ui/react";
 import useProducts from "../hooks/useProducts";
+import ProductCard from "./ProductCard";
 
 const ProductGrid = () => {
-  const {products , error} = useProducts();
+  const { products, error } = useProducts();
 
   return (
     <>
       {error && <p>{error}</p>}
 
-      <ul>
-        {products.map((product) => (
-          <li key={product.id}>{product.title}</li>
-        ))}
-      </ul>
+  <SimpleGrid
+  columns={{ base: 1, md: 2, lg: 3 }}
+  spacing={8}
+  justifyItems="center"
+>
+  {products.map((product) => (
+    <ProductCard key={product.id} product={product} />
+  ))}
+</SimpleGrid>
+
     </>
   );
 };
