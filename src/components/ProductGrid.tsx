@@ -1,4 +1,4 @@
-import { Center, SimpleGrid } from "@chakra-ui/react";
+import {SimpleGrid } from "@chakra-ui/react";
 import useProducts from "../hooks/useProducts";
 import ProductCard from "./ProductCard";
 import ProductCardSkeleteton from "./ProductCardSkeleteton";

@@ -1,6 +1,7 @@
 import { Grid, GridItem } from "@chakra-ui/react"
 import Navbar from "./components/Navbar"
 import ProductGrid from "./components/ProductGrid"
+import CategoryList from "./components/CategoryList"
 
 function App() {
 
@@ -13,8 +14,8 @@ function App() {
   <GridItem area="nav" bg={`white`}>
 <Navbar/>
   </GridItem>
-  <GridItem area="aside" bg={`red`}  display={{ base: "none", lg: "block" }}>
-aside
+  <GridItem area="aside"   display={{ base: "none", lg: "block" }}>
+<CategoryList/>
   </GridItem>
   <GridItem area="main" marginTop={5}>
 <ProductGrid/>
