@@ -12,12 +12,18 @@ interface Props {
   Category?: Category;
 }
 
-const CategoryList = () => {
+const CategoryList = ({Category}:Props) => {
   const{category}= useCategories()
   return (
-    <List spacing={4} >
-  {category.map((category) => (
-    <ListItem key={category.id} >
+    <List spacing={4}border="1px solid"
+      borderColor="white"
+      borderRadius="12px"
+      marginTop="20px"
+      paddingLeft="40px"
+      paddingTop="15px"
+      paddingBottom="10px">
+  {category.map((category, index) => (
+    <ListItem key={category.id} boxShadow="xl">
       <HStack>
         <Image
           src={category.image}

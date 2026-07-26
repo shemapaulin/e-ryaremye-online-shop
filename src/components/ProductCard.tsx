@@ -1,8 +1,9 @@
 
 import type { ProductProps } from '../hooks/useProducts'
-import { Card, CardBody, Flex, Heading, HStack, Image } from '@chakra-ui/react'
+import { Button, Card, CardBody, Flex, Heading, HStack, Image } from '@chakra-ui/react'
 import Like from './Like'
 import { MdOutlineAddShoppingCart } from "react-icons/md";
+import { useCart } from './CartContext';
 
 
 export interface Props {
@@ -10,10 +11,13 @@ product : ProductProps
 }
 
 const ProductCard = ( {product}:Props) => {
+  const { addToCart } = useCart();
   return (
    <Card w="100%" maxW="280px"  mx="auto" paddingTop={5} paddingLeft={5} alignContent="center">
     <Flex justify="flex-end" paddingRight="10px">
-  <MdOutlineAddShoppingCart size="20px" color="white"/>
+      <Button onClick={() => addToCart({ ...product, name: product.title })}>
+  <MdOutlineAddShoppingCart size="20px" color="red"/>
+  </Button>
 </Flex>
         <HStack>
           <Image src={product.image} boxSize="140px"

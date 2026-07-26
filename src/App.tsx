@@ -11,11 +11,10 @@ function App() {
         base: `"nav" "main"`,
         lg:`"nav nav" "aside main"`
       }}>
-  <GridItem area="nav" bg={`white`}>
+  <GridItem area="nav" >
 <Navbar/>
   </GridItem>
   <GridItem area="aside"   display={{ base: "none", lg: "block" }}>
-<CategoryList/>
   </GridItem>
   <GridItem area="main" marginTop={5}>
 <ProductGrid/>
