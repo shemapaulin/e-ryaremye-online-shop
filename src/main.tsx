@@ -6,6 +6,13 @@ import "./index.css";
 import App from "./App";
 import theme from "./theme";
 import { CartProvider } from "./components/CartContext";
+import { createBrowserRouter,RouterProvider } from "react-router-dom";
+import Home from "./components/Home";
+
+
+const router = createBrowserRouter([
+  {path:"/",element:<App/>}
+])
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -13,7 +20,7 @@ createRoot(document.getElementById("root")!).render(
       <ColorModeScript initialColorMode={theme.config.initialColorMode} />
 
       <CartProvider>
-        <App />
+        <RouterProvider router={router}/>
       </CartProvider>
 
     </ChakraProvider>

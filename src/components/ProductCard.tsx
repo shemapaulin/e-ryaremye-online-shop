@@ -15,7 +15,10 @@ const ProductCard = ( {product}:Props) => {
   return (
    <Card w="100%" maxW="280px"  mx="auto" paddingTop={5} paddingLeft={5} alignContent="center">
     <Flex justify="flex-end" paddingRight="10px">
-      <Button onClick={() => addToCart({ ...product, name: product.title })}>
+      <Button onClick={() => {
+        addToCart({ ...product, name: product.title });
+        console.log(product);
+      }}>
   <MdOutlineAddShoppingCart size="20px" color="red"/>
   </Button>
 </Flex>
