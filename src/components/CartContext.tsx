@@ -4,6 +4,8 @@ import { createContext, useContext, useState } from "react";
 interface Product {
   id: number;
   name: string;
+  image:string;
+  price:string;
 }
 
 interface CartContextType {

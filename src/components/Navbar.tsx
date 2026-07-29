@@ -3,6 +3,7 @@ import { TiShoppingCart } from "react-icons/ti";
 import Isoko from "../assets/isoko.png";
 import ColorModeSwitch from "./ColorModeSwitch";
 import { useCart } from "./CartContext";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const { count } = useCart();
@@ -10,7 +11,7 @@ const Navbar = () => {
   return (
     <HStack justifyContent="space-between">
       <Image src={Isoko} boxSize="90px" boxShadow="5px" />
-
+      <Link to={'/CartItems'}>
       <Flex gap="7" align="center">
         <Box position="relative">
           <Button rounded="3xl">
@@ -35,6 +36,7 @@ const Navbar = () => {
 
         <ColorModeSwitch />
       </Flex>
+      </Link>
     </HStack>
   );
 };

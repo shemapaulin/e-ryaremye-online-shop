@@ -7,11 +7,12 @@ import App from "./App";
 import theme from "./theme";
 import { CartProvider } from "./components/CartContext";
 import { createBrowserRouter,RouterProvider } from "react-router-dom";
-import Home from "./components/Home";
+import CartItems from "./components/CartItems";
 
 
 const router = createBrowserRouter([
-  {path:"/",element:<App/>}
+  {path:"/",element:<App/>},
+  {path:"/CartItems",element:<CartItems/>}
 ])
 
 createRoot(document.getElementById("root")!).render(
