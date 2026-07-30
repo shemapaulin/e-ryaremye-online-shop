@@ -1,5 +1,4 @@
 import { HStack, List, ListItem, Image } from "@chakra-ui/react";
-import useProducts from "../hooks/useProducts";
 import useCategories from "../hooks/useCategories";
 
 interface Category{
@@ -12,7 +11,7 @@ interface Props {
   Category?: Category;
 }
 
-const CategoryList = ({Category}:Props) => {
+const CategoryList = ({}:Props) => {
   const{category}= useCategories()
   return (
     <List spacing={4}border="1px solid"
@@ -22,7 +21,7 @@ const CategoryList = ({Category}:Props) => {
       paddingLeft="40px"
       paddingTop="15px"
       paddingBottom="10px">
-  {category.map((category, index) => (
+  {category.map((category) => (
     <ListItem key={category.id} boxShadow="xl">
       <HStack>
         <Image

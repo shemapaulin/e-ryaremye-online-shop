@@ -2,7 +2,6 @@
 import { Grid, GridItem } from "@chakra-ui/react"
 import Navbar from "./Navbar"
 import ProductGrid from "./ProductGrid"
-import CategoryList from "./CategoryList"
 
 const Home = () => {
   return (
